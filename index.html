@@ -6,24 +6,24 @@
   <title>Preparing Your Facility for eTRU | SafeConnect</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
-      --navy: #0b1f3a;
-      --navy-dark: #071528;
-      --blue: #1565c0;
+      --navy:       #0b1f3a;
+      --navy-dark:  #071528;
+      --blue:       #1565c0;
       --blue-light: #1976d2;
-      --blue-bright: #2196f3;
-      --accent: #f5a623;
-      --white: #ffffff;
-      --gray-100: #f5f7fa;
-      --gray-200: #e8ecf0;
-      --gray-400: #9aa5b1;
-      --gray-600: #4a5568;
-      --gray-800: #1a202c;
-      --radius: 6px;
-      --shadow: 0 2px 12px rgba(0,0,0,0.10);
+      --accent:     #f5a623;
+      --white:      #ffffff;
+      --gray-50:    #f9fafb;
+      --gray-100:   #f3f6f9;
+      --gray-200:   #e4eaf1;
+      --gray-400:   #8fa0b4;
+      --gray-600:   #4a5568;
+      --gray-800:   #1a202c;
+      --radius:     6px;
+      --section-pad: 96px 24px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,54 +32,57 @@
       font-family: 'Inter', sans-serif;
       color: var(--gray-800);
       background: var(--white);
-      line-height: 1.6;
+      line-height: 1.65;
+      font-size: 16px;
     }
 
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
 
-    /* ── HEADER ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, transform 0.1s;
+      white-space: nowrap;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-nav    { background: var(--blue); color: var(--white); padding: 10px 22px; font-size: 0.875rem; }
+    .btn-nav:hover { background: var(--blue-light); }
+    .btn-hero   { background: var(--blue); color: var(--white); padding: 16px 32px; font-size: 1.05rem; }
+    .btn-hero:hover { background: var(--blue-light); }
+    .btn-form   { background: var(--blue); color: var(--white); padding: 16px 32px; font-size: 1.05rem; width: 100%; justify-content: center; margin-top: 10px; }
+    .btn-form:hover { background: var(--blue-light); }
+    .btn-footer { background: transparent; color: var(--white); padding: 14px 28px; font-size: 0.95rem; border: 2px solid rgba(255,255,255,0.5); border-radius: var(--radius); }
+    .btn-footer:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
+
+    /* ─── HEADER ─── */
     header {
       background: var(--white);
       border-bottom: 1px solid var(--gray-200);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 200;
     }
     .header-inner {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 24px;
-      height: 68px;
+      height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
     }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      font-size: 1.25rem;
-      color: var(--navy);
-      white-space: nowrap;
-    }
-    .logo-icon {
-      background: var(--blue);
-      color: var(--white);
-      width: 36px;
-      height: 36px;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-    }
-    .logo-sub { font-size: 0.6rem; font-weight: 500; color: var(--gray-400); display: block; margin-top: -4px; letter-spacing: 0.05em; }
-    nav { display: flex; align-items: center; gap: 6px; flex: 1; justify-content: center; }
+    .logo-img { height: 48px; width: auto; }
+    nav { display: flex; align-items: center; gap: 4px; flex: 1; justify-content: center; }
     nav a {
-      padding: 8px 14px;
+      padding: 9px 16px;
       font-size: 0.875rem;
       font-weight: 500;
       color: var(--gray-600);
@@ -87,144 +90,262 @@
       transition: color 0.15s, background 0.15s;
     }
     nav a:hover { color: var(--navy); background: var(--gray-100); }
-    .btn { display: inline-block; border-radius: var(--radius); font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.1s; border: none; font-family: inherit; }
-    .btn:active { transform: scale(0.98); }
-    .btn-primary { background: var(--blue); color: var(--white); padding: 10px 22px; font-size: 0.875rem; }
-    .btn-primary:hover { background: var(--blue-light); }
-    .btn-hero { background: var(--blue); color: var(--white); padding: 14px 28px; font-size: 1rem; }
-    .btn-hero:hover { background: var(--blue-light); }
-    .btn-form { background: var(--blue); color: var(--white); padding: 14px 28px; font-size: 1rem; width: 100%; text-align: center; margin-top: 8px; }
-    .btn-form:hover { background: var(--blue-light); }
-    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; color: var(--navy); font-size: 1.3rem; }
 
-    /* ── HERO ── */
+    /* ─── HERO ─── */
     .hero {
-      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #122d54 100%);
+      background: linear-gradient(135deg, #071528 0%, #0b1f3a 55%, #122d54 100%);
       color: var(--white);
-      padding: 72px 24px;
+      padding: 84px 24px 96px;
     }
     .hero-inner {
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 340px;
-      gap: 60px;
+      grid-template-columns: 1fr 360px;
+      gap: 72px;
       align-items: center;
     }
     .hero-eyebrow {
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      margin-bottom: 16px;
+      color: var(--accent);
+      margin-bottom: 18px;
     }
     .hero h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800;
-      line-height: 1.15;
+      font-size: clamp(2.1rem, 4.5vw, 3.25rem);
+      font-weight: 900;
+      line-height: 1.1;
       margin-bottom: 20px;
     }
     .hero-desc {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 32px;
-      max-width: 520px;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 36px;
+      max-width: 540px;
+      line-height: 1.7;
     }
-    .hero-bullets { list-style: none; margin-bottom: 32px; display: flex; flex-direction: column; gap: 10px; }
-    .hero-bullets li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem; color: rgba(255,255,255,0.85); }
-    .hero-bullets li i { color: #4ade80; margin-top: 3px; flex-shrink: 0; }
-    .hero-note { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 12px; }
+    .hero-cta-wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+    .hero-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      margin: 0;
+    }
+    .hero-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.5;
+    }
+    .hero-bullets li i { color: #4ade80; margin-top: 2px; flex-shrink: 0; font-size: 1rem; }
+    .hero-note { font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-top: 4px; }
 
     /* Book mockup */
+    .book-wrap {
+      display: flex;
+      justify-content: center;
+    }
     .book-mockup {
-      background: linear-gradient(145deg, #1565c0, #0d47a1);
-      border-radius: 8px;
-      padding: 28px 24px;
-      box-shadow: -8px 8px 32px rgba(0,0,0,0.5), 4px -4px 0 rgba(255,255,255,0.05);
-      position: relative;
+      background: linear-gradient(145deg, #1a6dd4, #0c3f8a);
+      border-radius: 10px;
+      padding: 32px 26px 28px;
+      box-shadow: -10px 10px 40px rgba(0,0,0,0.55), 5px -5px 0 rgba(255,255,255,0.04);
+      width: 100%;
+      max-width: 320px;
       aspect-ratio: 3/4;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
     }
     .book-mockup::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='20' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3C/svg%3E") center/cover;
-      border-radius: 8px;
-      opacity: 0.6;
+      background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.06) 0%, transparent 60%);
     }
-    .book-logo { font-size: 0.7rem; font-weight: 800; color: rgba(255,255,255,0.9); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: auto; display: flex; align-items: center; gap: 6px; }
-    .book-logo-icon { background: rgba(255,255,255,0.2); width: 24px; height: 24px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; }
-    .book-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
-    .book-title { font-size: 1.1rem; font-weight: 800; color: var(--white); line-height: 1.3; margin-bottom: 12px; }
-    .book-subtitle { font-size: 0.65rem; color: rgba(255,255,255,0.7); line-height: 1.5; margin-bottom: 0; }
-
-    /* ── TRUST BAR ── */
-    .trust-bar {
-      background: var(--gray-100);
-      border-bottom: 1px solid var(--gray-200);
-      padding: 28px 24px;
-      text-align: center;
-    }
-    .trust-bar p { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 20px; }
-    .trust-icons { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
-    .trust-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-    .trust-item i { font-size: 1.6rem; color: var(--gray-400); }
-    .trust-item span { font-size: 0.7rem; font-weight: 600; color: var(--gray-600); text-align: center; max-width: 80px; line-height: 1.3; }
-
-    /* ── SECTIONS ── */
-    section { padding: 72px 24px; }
-    .container { max-width: 1200px; margin: 0 auto; }
-    .section-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 12px;
+    .book-brand {
       display: flex;
       align-items: center;
       gap: 8px;
+      margin-bottom: auto;
     }
-    .section-label::before { content: ''; display: block; width: 24px; height: 2px; background: var(--blue); }
+    .book-brand img { height: 28px; width: auto; filter: brightness(0) invert(1); opacity: 0.9; }
+    .book-tag { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .book-title { font-size: 1.25rem; font-weight: 900; color: var(--white); line-height: 1.25; margin-bottom: 14px; }
+    .book-divider { width: 40px; height: 2px; background: rgba(255,255,255,0.3); margin-bottom: 14px; }
+    .book-sub { font-size: 0.68rem; color: rgba(255,255,255,0.65); line-height: 1.55; }
 
-    /* ── WHY GUIDE ── */
-    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-    .why-left h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--navy); margin-bottom: 20px; line-height: 1.2; }
-    .why-left p { color: var(--gray-600); margin-bottom: 16px; font-size: 0.95rem; }
-    .why-left strong { color: var(--navy); }
-    .learn-cards { display: grid; gap: 16px; }
-    .learn-card {
-      background: var(--gray-100);
-      border: 1px solid var(--gray-200);
-      border-radius: 10px;
-      padding: 20px;
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
+    /* ─── TRUST BAR ─── */
+    .trust-bar {
+      background: var(--white);
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 48px 24px;
+      text-align: center;
     }
-    .learn-card-icon {
-      width: 44px;
-      height: 44px;
-      background: var(--blue);
-      color: var(--white);
-      border-radius: 8px;
+    .trust-bar p {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 32px;
+    }
+    .trust-icons {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 56px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .trust-icon-ring {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 2px solid var(--gray-200);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
+      font-size: 1.6rem;
+      color: var(--blue);
+      background: var(--gray-50);
+    }
+    .trust-item span {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gray-600);
+      text-align: center;
+      max-width: 90px;
+      line-height: 1.4;
+    }
+
+    /* ─── SECTION SHARED ─── */
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-label::before { content: ''; display: block; width: 28px; height: 3px; background: var(--blue); border-radius: 2px; }
+
+    /* ─── WHY THIS GUIDE MATTERS ─── */
+    .why-section { padding: var(--section-pad); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .why-left h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .why-left p { color: var(--gray-600); margin-bottom: 18px; font-size: 0.975rem; line-height: 1.75; }
+    .why-left strong { color: var(--navy); font-weight: 700; }
+
+    /* ─── WHAT YOU'LL LEARN ─── */
+    .learn-label { margin-bottom: 20px; }
+    .learn-cards { display: flex; flex-direction: column; gap: 18px; }
+    .learn-card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 22px 20px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      transition: box-shadow 0.2s;
+    }
+    .learn-card:hover { box-shadow: 0 4px 16px rgba(21,101,192,0.1); }
+    .learn-card-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--blue);
+      color: var(--white);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
       flex-shrink: 0;
     }
-    .learn-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
-    .learn-card p { font-size: 0.82rem; color: var(--gray-600); line-height: 1.5; }
+    .learn-card h4 { font-size: 0.95rem; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .learn-card p { font-size: 0.875rem; color: var(--gray-600); line-height: 1.6; }
 
-    /* ── FAQ ── */
-    .faq-section { background: var(--gray-100); }
-    .faq-section h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 800; color: var(--navy); margin-bottom: 32px; }
-    .faq-list { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--gray-200); border-radius: 10px; overflow: hidden; }
+    /* ─── PHOTO STRIP ─── */
+    .photo-strip {
+      width: 100%;
+      height: 320px;
+      overflow: hidden;
+      position: relative;
+    }
+    .photo-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+    }
+    .photo-strip-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(7,21,40,0.55) 0%, rgba(7,21,40,0.2) 100%);
+      display: flex;
+      align-items: center;
+      padding: 0 48px;
+    }
+    .photo-strip-text {
+      color: var(--white);
+      max-width: 560px;
+    }
+    .photo-strip-text p {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .photo-strip-text h3 {
+      font-size: clamp(1.3rem, 2.5vw, 1.85rem);
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    /* ─── FAQ ─── */
+    .faq-section {
+      padding: var(--section-pad);
+      background: var(--gray-100);
+    }
+    .faq-section h2 {
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 40px;
+      line-height: 1.2;
+    }
+    .faq-list { border: 1px solid var(--gray-200); border-radius: 12px; overflow: hidden; }
     .faq-item { background: var(--white); border-bottom: 1px solid var(--gray-200); }
     .faq-item:last-child { border-bottom: none; }
     .faq-q {
@@ -232,214 +353,413 @@
       background: none;
       border: none;
       text-align: left;
-      padding: 20px 24px;
+      padding: 22px 28px;
       font-family: inherit;
-      font-size: 0.95rem;
-      font-weight: 600;
+      font-size: 1rem;
+      font-weight: 700;
       color: var(--navy);
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
+      gap: 20px;
       transition: background 0.15s;
+      line-height: 1.4;
     }
-    .faq-q:hover { background: var(--gray-100); }
-    .faq-q i { color: var(--blue); transition: transform 0.25s; flex-shrink: 0; }
+    .faq-q:hover { background: var(--gray-50); }
+    .faq-q i { color: var(--blue); transition: transform 0.25s; flex-shrink: 0; font-size: 1rem; }
     .faq-q.open i { transform: rotate(45deg); }
-    .faq-a { display: none; padding: 0 24px 20px; font-size: 0.9rem; color: var(--gray-600); line-height: 1.7; }
+    .faq-a {
+      display: none;
+      padding: 0 28px 24px;
+      font-size: 0.975rem;
+      color: var(--gray-600);
+      line-height: 1.75;
+    }
     .faq-a.open { display: block; }
 
-    /* ── POOR PLANNING ── */
-    .poor-planning {
-      background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+    /* ─── POOR PLANNING ─── */
+    .poor-section {
+      position: relative;
+      overflow: hidden;
       color: var(--white);
     }
-    .poor-planning .section-label { color: var(--accent); }
-    .poor-planning .section-label::before { background: var(--accent); }
-    .poor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .poor-left h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 8px; }
-    .poor-left > p { color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 32px; }
-    .consequence-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .consequence-item { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 20px 16px; text-align: center; }
-    .consequence-item i { font-size: 1.8rem; color: var(--accent); margin-bottom: 10px; }
-    .consequence-item span { font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.85); line-height: 1.4; display: block; }
-    .poor-right {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 12px;
-      padding: 36px;
+    .poor-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/photo-aerial-night.jpg');
+      background-size: cover;
+      background-position: center;
     }
-    .poor-right p { font-size: 1.1rem; font-weight: 600; color: var(--white); line-height: 1.6; }
-    .poor-right strong { color: var(--accent); }
+    .poor-bg-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(7,21,40,0.94) 0%, rgba(11,31,58,0.90) 100%);
+    }
+    .poor-content {
+      position: relative;
+      z-index: 1;
+      padding: var(--section-pad);
+    }
+    .poor-section .section-label { color: var(--accent); }
+    .poor-section .section-label::before { background: var(--accent); }
+    .poor-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .poor-left h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+    .poor-left > p { color: rgba(255,255,255,0.65); font-size: 0.95rem; margin-bottom: 36px; }
+    .consequence-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .consequence-item {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 22px 14px;
+      text-align: center;
+    }
+    .consequence-item i { font-size: 1.75rem; color: var(--accent); margin-bottom: 10px; display: block; }
+    .consequence-item span { font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.88); line-height: 1.4; display: block; }
+    .poor-right {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 14px;
+      padding: 40px 36px;
+    }
+    .poor-right p {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1.7;
+    }
+    .poor-right strong { color: var(--accent); font-weight: 800; }
 
-    /* ── WHY SAFECONNECT ── */
-    .why-sc-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; align-items: start; }
-    .why-sc-left h2 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); font-weight: 800; color: var(--navy); margin-bottom: 16px; }
-    .why-sc-left p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.7; }
-    .focus-label { font-size: 0.75rem; font-weight: 700; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 20px; }
-    .focus-icons { display: flex; flex-direction: column; gap: 20px; }
-    .focus-item { display: flex; align-items: center; gap: 16px; }
-    .focus-icon { width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--gray-200); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--blue); flex-shrink: 0; }
-    .focus-item span { font-size: 0.9rem; font-weight: 600; color: var(--navy); }
-    .why-sc-right p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.7; }
+    /* ─── WHY SAFECONNECT ─── */
+    .why-sc-section { padding: var(--section-pad); }
+    .why-sc-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .why-sc-left h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .why-sc-left p { font-size: 0.975rem; color: var(--gray-600); line-height: 1.75; margin-bottom: 24px; }
+    .focus-pills { display: flex; flex-direction: column; gap: 14px; }
+    .focus-pill {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+    }
+    .focus-pill-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .focus-pill span { font-size: 0.95rem; font-weight: 700; color: var(--navy); }
+    .why-sc-photo {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(11,31,58,0.18);
+    }
+    .why-sc-photo img { width: 100%; height: 380px; object-fit: cover; object-position: center; }
 
-    /* ── FORM ── */
-    .form-section { background: var(--gray-100); }
-    .form-grid { display: grid; grid-template-columns: 340px 1fr; gap: 60px; align-items: start; }
-    .form-book { position: relative; }
-    .form-book-img {
-      background: linear-gradient(145deg, #1565c0, #0d47a1);
-      border-radius: 8px;
-      padding: 28px 24px;
-      box-shadow: -6px 6px 24px rgba(0,0,0,0.25);
+    /* ─── FORM ─── */
+    .form-section {
+      padding: var(--section-pad);
+      background: var(--gray-100);
+    }
+    .form-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .form-book-wrap { display: flex; justify-content: center; }
+    .form-book {
+      background: linear-gradient(145deg, #1a6dd4, #0c3f8a);
+      border-radius: 10px;
+      padding: 32px 26px 28px;
+      box-shadow: -8px 8px 32px rgba(0,0,0,0.28);
+      width: 100%;
+      max-width: 280px;
       aspect-ratio: 3/4;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
     }
-    .form-book-tag { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
-    .form-book-title { font-size: 1rem; font-weight: 800; color: var(--white); line-height: 1.3; margin-bottom: 10px; }
-    .form-book-sub { font-size: 0.6rem; color: rgba(255,255,255,0.7); line-height: 1.5; }
-    .form-right h2 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); font-weight: 800; color: var(--navy); margin-bottom: 8px; }
-    .form-right > p { font-size: 0.9rem; color: var(--gray-600); margin-bottom: 24px; }
-    .form-grid-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-book::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.07) 0%, transparent 65%);
+    }
+    .form-book .book-brand img { height: 22px; }
+    .form-book .book-tag { font-size: 0.58rem; }
+    .form-book .book-title { font-size: 1.05rem; }
+    .form-book .book-sub { font-size: 0.62rem; }
+
+    .form-right h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .form-right > p { font-size: 0.95rem; color: var(--gray-600); margin-bottom: 28px; line-height: 1.6; }
+    .form-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .form-group { display: flex; flex-direction: column; gap: 6px; }
     .form-group.full { grid-column: 1 / -1; }
-    .form-group label { font-size: 0.8rem; font-weight: 600; color: var(--gray-600); }
+    .form-group label { font-size: 0.8rem; font-weight: 700; color: var(--gray-600); }
     .form-group input,
     .form-group select {
-      padding: 10px 14px;
-      border: 1px solid var(--gray-200);
+      padding: 12px 14px;
+      border: 1.5px solid var(--gray-200);
       border-radius: var(--radius);
       font-family: inherit;
-      font-size: 0.9rem;
+      font-size: 0.925rem;
       color: var(--gray-800);
       background: var(--white);
-      transition: border-color 0.15s;
+      transition: border-color 0.15s, box-shadow 0.15s;
       -webkit-appearance: none;
     }
     .form-group input:focus,
-    .form-group select:focus { outline: none; border-color: var(--blue); }
-    .form-privacy { font-size: 0.75rem; color: var(--gray-400); margin-top: 8px; text-align: center; }
-    .form-privacy i { margin-right: 4px; }
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(21,101,192,0.12);
+    }
+    .form-privacy { font-size: 0.76rem; color: var(--gray-400); margin-top: 10px; text-align: center; }
+    .form-privacy i { margin-right: 5px; }
 
-    /* ── FOOTER ── */
-    footer { background: var(--navy-dark); color: rgba(255,255,255,0.7); padding: 56px 24px 24px; }
-    .footer-top { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 240px 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-    .footer-brand .logo { color: var(--white); margin-bottom: 12px; }
-    .footer-brand p { font-size: 0.82rem; line-height: 1.6; color: rgba(255,255,255,0.55); margin-bottom: 16px; }
-    .footer-social { display: flex; gap: 10px; }
-    .footer-social a { width: 34px; height: 34px; background: rgba(255,255,255,0.08); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; color: rgba(255,255,255,0.6); transition: background 0.15s; }
-    .footer-social a:hover { background: var(--blue); color: var(--white); }
-    .footer-col h5 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--white); margin-bottom: 16px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .footer-col ul li a { font-size: 0.85rem; color: rgba(255,255,255,0.55); transition: color 0.15s; }
-    .footer-col ul li a:hover { color: var(--white); }
-    .footer-bottom { max-width: 1200px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-    .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
-    .footer-contact { display: flex; flex-direction: column; gap: 6px; }
-    .footer-contact a { font-size: 0.82rem; color: rgba(255,255,255,0.55); display: flex; align-items: center; gap: 8px; transition: color 0.15s; }
+    /* ─── FOOTER CTA STRIP ─── */
+    .footer-cta {
+      background: var(--navy);
+      padding: 72px 24px;
+      text-align: center;
+      color: var(--white);
+    }
+    .footer-cta h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+    .footer-cta p { font-size: 1rem; color: rgba(255,255,255,0.7); margin-bottom: 32px; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,0.65);
+      padding: 56px 24px 28px;
+    }
+    .footer-top {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      display: grid;
+      grid-template-columns: 260px 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    .footer-logo img { height: 44px; width: auto; filter: brightness(0) invert(1); opacity: 0.9; margin-bottom: 14px; }
+    .footer-brand p { font-size: 0.85rem; line-height: 1.65; color: rgba(255,255,255,0.5); margin-bottom: 18px; }
+    .footer-contact { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+    .footer-contact a {
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.55);
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      transition: color 0.15s;
+    }
     .footer-contact a:hover { color: var(--white); }
+    .footer-contact a i { width: 14px; }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      transition: background 0.15s, color 0.15s;
+    }
+    .footer-social a:hover { background: var(--blue); color: var(--white); }
+    .footer-col h5 {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-col ul li a { font-size: 0.87rem; color: rgba(255,255,255,0.5); transition: color 0.15s; }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: 0.76rem; color: rgba(255,255,255,0.3); }
 
-    /* ── MOBILE ── */
-    @media (max-width: 900px) {
+    /* ─── MOBILE ─── */
+    @media (max-width: 960px) {
       nav { display: none; }
       .hamburger { display: flex; }
-      .hero-inner { grid-template-columns: 1fr; }
-      .book-mockup { max-width: 280px; margin: 0 auto; }
-      .why-grid { grid-template-columns: 1fr; gap: 36px; }
-      .poor-grid { grid-template-columns: 1fr; }
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .book-mockup { max-width: 260px; margin: 0 auto; }
+      .why-grid { grid-template-columns: 1fr; gap: 40px; }
+      .poor-grid { grid-template-columns: 1fr; gap: 40px; }
       .consequence-grid { grid-template-columns: repeat(2, 1fr); }
-      .why-sc-grid { grid-template-columns: 1fr; gap: 28px; }
-      .form-grid { grid-template-columns: 1fr; }
-      .form-book { display: none; }
+      .why-sc-grid { grid-template-columns: 1fr; gap: 40px; }
+      .form-inner { grid-template-columns: 1fr; }
+      .form-book-wrap { display: none; }
       .footer-top { grid-template-columns: 1fr 1fr; }
       .footer-brand { grid-column: 1 / -1; }
+      .photo-strip { height: 220px; }
     }
-    @media (max-width: 600px) {
-      .form-grid-fields { grid-template-columns: 1fr; }
+    @media (max-width: 620px) {
+      :root { --section-pad: 64px 20px; }
+      .form-fields { grid-template-columns: 1fr; }
       .consequence-grid { grid-template-columns: 1fr 1fr; }
-      .trust-icons { gap: 20px; }
+      .trust-icons { gap: 28px; }
       .footer-top { grid-template-columns: 1fr; }
+      .trust-icon-ring { width: 54px; height: 54px; font-size: 1.3rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- ── HEADER ── -->
+<!-- ─── HEADER ─── -->
 <header>
   <div class="header-inner">
-    <a href="#" class="logo">
-      <div class="logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
-      <div>
-        SAFECONNECT
-        <span class="logo-sub">Still goes for safety™</span>
-      </div>
+    <a href="#">
+      <img src="assets/logo.png" alt="SafeConnect" class="logo-img" />
     </a>
     <nav>
-      <a href="#">Solutions <i class="fa-solid fa-chevron-down" style="font-size:0.65rem;"></i></a>
-      <a href="#">Industries <i class="fa-solid fa-chevron-down" style="font-size:0.65rem;"></i></a>
-      <a href="#">Resources <i class="fa-solid fa-chevron-down" style="font-size:0.65rem;"></i></a>
-      <a href="#">About <i class="fa-solid fa-chevron-down" style="font-size:0.65rem;"></i></a>
+      <a href="#">SafeConnect Products</a>
+      <a href="#">Certifications</a>
+      <a href="#">Incentives</a>
+      <a href="#">eTRU Guide</a>
     </nav>
-    <a href="#form" class="btn btn-primary">Contact Us</a>
-    <button class="hamburger" aria-label="Menu" onclick="document.querySelector('nav').style.display='flex';this.style.display='none'">
-      <i class="fa-solid fa-bars" style="font-size:1.2rem;color:var(--navy);"></i>
+    <a href="#form" class="btn btn-nav">Contact Us</a>
+    <button class="hamburger" aria-label="Open menu" onclick="this.nextElementSibling.style.display='block'">
+      <i class="fa-solid fa-bars"></i>
     </button>
   </div>
 </header>
 
-<!-- ── HERO ── -->
+<!-- ─── HERO ─── -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-content">
       <p class="hero-eyebrow">Free White Paper</p>
-      <h1>Preparing Your<br>Facility for eTRU</h1>
+      <h1>Preparing Your Facility for eTRU</h1>
       <p class="hero-desc">A practical guide to infrastructure planning, operational readiness, safety considerations, and ROI for refrigerated fleets evaluating electric standby.</p>
-      <ul class="hero-bullets">
-        <li><i class="fa-solid fa-circle-check"></i> No sales pitch. No obligation.</li>
-        <li><i class="fa-solid fa-circle-check"></i> Just practical guidance from teams that have helped fleets successfully implement electric standby infrastructure.</li>
-      </ul>
-      <a href="#form" class="btn btn-hero"><i class="fa-solid fa-download" style="margin-right:8px;"></i>Download the White Paper</a>
-      <p class="hero-note">We respect your privacy. Your information will never be shared.</p>
-    </div>
-    <div class="book-mockup">
-      <div class="book-logo">
-        <div class="book-logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
-        SAFECONNECT
+
+      <div class="hero-cta-wrap">
+        <a href="#form" class="btn btn-hero">
+          <i class="fa-solid fa-download"></i>
+          Download the White Paper
+        </a>
+        <ul class="hero-bullets">
+          <li><i class="fa-solid fa-circle-check"></i> No sales pitch. No obligation.</li>
+          <li><i class="fa-solid fa-circle-check"></i> Practical guidance from teams that have helped fleets successfully implement electric standby infrastructure.</li>
+        </ul>
+        <p class="hero-note"><i class="fa-solid fa-lock" style="margin-right:5px;"></i>We respect your privacy. Your information will never be shared.</p>
       </div>
-      <p class="book-tag">The Real Cost of</p>
-      <h3 class="book-title">Electrifying Yard Operations</h3>
-      <p class="book-subtitle">Infrastructure, ROI, and What Fleets Need to Know Before Switching to Zero</p>
+    </div>
+
+    <div class="book-wrap">
+      <div class="book-mockup">
+        <div class="book-brand">
+          <img src="assets/logo.png" alt="SafeConnect" />
+        </div>
+        <p class="book-tag">The Real Cost of</p>
+        <h3 class="book-title">Electrifying Yard Operations</h3>
+        <div class="book-divider"></div>
+        <p class="book-sub">Infrastructure, ROI, and What Fleets Need to Know Before Switching to Zero</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ── TRUST BAR ── -->
+<!-- ─── TRUST BAR ─── -->
 <div class="trust-bar">
   <p>Trusted by Refrigerated Fleet Operators Across North America</p>
   <div class="trust-icons">
-    <div class="trust-item"><i class="fa-solid fa-cart-shopping"></i><span>Grocery Distribution</span></div>
-    <div class="trust-item"><i class="fa-solid fa-utensils"></i><span>Foodservice Distribution</span></div>
-    <div class="trust-item"><i class="fa-solid fa-snowflake"></i><span>Cold Chain Logistics</span></div>
-    <div class="trust-item"><i class="fa-solid fa-cow"></i><span>Dairy Operations</span></div>
+    <div class="trust-item">
+      <div class="trust-icon-ring"><i class="fa-solid fa-cart-shopping"></i></div>
+      <span>Grocery Distribution</span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon-ring"><i class="fa-solid fa-utensils"></i></div>
+      <span>Foodservice Distribution</span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon-ring"><i class="fa-solid fa-snowflake"></i></div>
+      <span>Cold Chain Logistics</span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon-ring"><i class="fa-solid fa-cow"></i></div>
+      <span>Dairy Operations</span>
+    </div>
   </div>
 </div>
 
-<!-- ── WHY THIS GUIDE MATTERS ── -->
-<section>
+<!-- ─── WHY THIS GUIDE MATTERS + WHAT YOU'LL LEARN ─── -->
+<section class="why-section">
   <div class="container">
     <div class="why-grid">
       <div class="why-left">
         <p class="section-label">Why This Guide Matters</p>
-        <h2>Most facilities can support eTRU.</h2>
-        <p>The challenge isn't whether electrification is possible.</p>
-        <p>The challenge is making sure the <strong>infrastructure, operational workflows, and safety systems</strong> are aligned before major investments are made.</p>
-        <p>This guide was developed to help fleet and operations leaders evaluate what it actually takes to prepare a facility for electric standby.</p>
+        <h2>Curious about whether your facility can support eTRU? We can help.</h2>
+        <p>The challenge is making sure your <strong>infrastructure, operational workflows, and safety systems</strong> are aligned before major investments are made.</p>
+        <p>Our guide was developed to help fleet and operations leaders evaluate what it actually takes to prepare a facility for electric standby.</p>
       </div>
+
       <div class="why-right">
-        <p class="section-label">What You'll Learn</p>
+        <p class="section-label learn-label">What You'll Learn</p>
         <div class="learn-cards">
           <div class="learn-card">
             <div class="learn-card-icon"><i class="fa-solid fa-bolt"></i></div>
@@ -468,63 +788,83 @@
   </div>
 </section>
 
-<!-- ── FAQ ── -->
+<!-- ─── PHOTO STRIP ─── -->
+<div class="photo-strip">
+  <img src="assets/photo-truck-dock.jpg" alt="Refrigerated fleet at distribution center" />
+  <div class="photo-strip-overlay">
+    <div class="photo-strip-text">
+      <p>Real-World eTRU Deployments</p>
+      <h3>Infrastructure decisions made before equipment arrives determine whether electrification succeeds.</h3>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FAQ ─── -->
 <section class="faq-section">
   <div class="container">
     <p class="section-label">Common Questions We Hear From Fleet Operators</p>
+    <h2>Common Questions We Hear From Fleet Operators</h2>
     <div class="faq-list">
+
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           How much power does a facility need for eTRU?
           <i class="fa-solid fa-plus"></i>
         </button>
         <div class="faq-a">
-          Power requirements vary based on fleet size, trailer mix, and simultaneous plug-in targets. Most facilities need between 200–600 amps of dedicated capacity, but site surveys are essential before any infrastructure investment. This guide walks through the variables that drive that number.
+          A facility's power requirements depend on the number of refrigerated trailers that will be connected simultaneously, their dwell times, and the available electrical capacity needed to support peak demand.
         </div>
       </div>
+
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           Can existing facilities be upgraded?
           <i class="fa-solid fa-plus"></i>
         </button>
         <div class="faq-a">
-          Yes — in most cases, existing facilities can be upgraded without major structural changes. The key variables are available panel capacity, yard layout, and utility feed sizing. This guide covers common upgrade scenarios and what to expect during the assessment process.
+          Most existing facilities can be upgraded to support eTRU through electrical service enhancements, power distribution improvements, and infrastructure modifications tailored to their operational needs.
         </div>
       </div>
+
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           What impacts ROI the most?
           <i class="fa-solid fa-plus"></i>
         </button>
         <div class="faq-a">
-          Fuel savings, idle reduction, and equipment longevity are the biggest ROI drivers. The largest variable is how much of your fleet is parked at the facility overnight. Facilities with high overnight dwell times typically see payback in 2–4 years depending on fleet size and utility rates.
+          ROI is typically driven by a combination of reduced diesel consumption, lower maintenance costs, extended equipment life, and minimizing operational disruptions through proper infrastructure planning.
         </div>
       </div>
+
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           How long does implementation take?
           <i class="fa-solid fa-plus"></i>
         </button>
         <div class="faq-a">
-          A typical rollout from assessment to fully operational runs 4–9 months. Utility interconnection timelines are the most common source of delays, followed by permitting. This guide includes a sample project timeline and tips for reducing lead time on the longest-lead items.
+          Implementation timelines vary based on existing electrical infrastructure and utility requirements, but projects typically move fastest when power availability, capacity planning, and facility design are addressed early in the process.
         </div>
       </div>
+
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           What are the biggest infrastructure mistakes?
           <i class="fa-solid fa-plus"></i>
         </button>
         <div class="faq-a">
-          The most common mistakes are undersizing the electrical service, failing to account for future fleet growth, and skipping a proper yard flow analysis before placing pedestals. This guide documents the top 7 infrastructure planning errors and how to avoid them.
+          The most common infrastructure mistakes are underestimating power requirements, delaying utility coordination, and designing electrical systems without accounting for real-world trailer flow and yard operations.
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ── POOR PLANNING ── -->
-<section class="poor-planning">
-  <div class="container">
+<!-- ─── POOR PLANNING ─── -->
+<section class="poor-section">
+  <div class="poor-bg"></div>
+  <div class="poor-bg-overlay"></div>
+  <div class="poor-content">
     <div class="poor-grid">
       <div class="poor-left">
         <p class="section-label">The Real Cost of Getting It Wrong</p>
@@ -546,95 +886,103 @@
   </div>
 </section>
 
-<!-- ── WHY SAFECONNECT ── -->
-<section>
-  <div class="container">
-    <div class="why-sc-grid">
-      <div class="why-sc-left">
-        <p class="section-label">Why SafeConnect</p>
-        <h2>Our focus is simple:</h2>
-        <p>SafeConnect has spent decades helping refrigerated fleet operators implement safe, reliable electric standby infrastructure. We don't sell theory — we deliver systems that work in the real world, backed by field experience across hundreds of facilities.</p>
-      </div>
-      <div class="why-sc-center">
-        <p class="focus-label">Our focus is simple:</p>
-        <div class="focus-icons">
-          <div class="focus-item"><div class="focus-icon"><i class="fa-solid fa-shield-halved"></i></div><span>Safety</span></div>
-          <div class="focus-item"><div class="focus-icon"><i class="fa-solid fa-circle-check"></i></div><span>Reliability</span></div>
-          <div class="focus-item"><div class="focus-icon"><i class="fa-solid fa-chart-line"></i></div><span>Long-term Performance</span></div>
+<!-- ─── WHY SAFECONNECT ─── -->
+<section class="why-sc-section">
+  <div class="why-sc-grid">
+    <div class="why-sc-left">
+      <p class="section-label">Why SafeConnect</p>
+      <h2>Our focus is simple:</h2>
+      <p>SafeConnect has spent decades helping refrigerated fleet operators implement safe, reliable electric standby infrastructure. Because electrification only succeeds when it works in the real world.</p>
+      <div class="focus-pills">
+        <div class="focus-pill">
+          <div class="focus-pill-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <span>Safety</span>
+        </div>
+        <div class="focus-pill">
+          <div class="focus-pill-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <span>Reliability</span>
+        </div>
+        <div class="focus-pill">
+          <div class="focus-pill-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <span>Long-term Operational Performance</span>
         </div>
       </div>
-      <div class="why-sc-right">
-        <p>Because electrification only succeeds when it works in the real world.</p>
-        <br>
-        <p>Every white paper, guide, and resource we publish is grounded in what our teams have actually seen in the field — not vendor datasheets or theoretical projections.</p>
-      </div>
+    </div>
+    <div class="why-sc-photo">
+      <img src="assets/photo-etru-plug.jpg" alt="eTRU electric standby plug connection on refrigerated trailer" />
     </div>
   </div>
 </section>
 
-<!-- ── FORM ── -->
+<!-- ─── FORM ─── -->
 <section class="form-section" id="form">
-  <div class="container">
-    <div class="form-grid">
+  <div class="form-inner">
+    <div class="form-book-wrap">
       <div class="form-book">
-        <div class="form-book-img">
-          <div class="book-logo" style="margin-bottom:auto;">
-            <div class="book-logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
-            SAFECONNECT
-          </div>
-          <p class="form-book-tag">The Real Cost of</p>
-          <h3 class="form-book-title">Electrifying Yard Operations</h3>
-          <p class="form-book-sub">Infrastructure, Safety, Reliability, and ROI Considerations for eTRU Deployment. Instant Access. No obligation.</p>
+        <div class="book-brand">
+          <img src="assets/logo.png" alt="SafeConnect" />
         </div>
+        <p class="book-tag">The Real Cost of</p>
+        <h3 class="book-title">Electrifying Yard Operations</h3>
+        <div class="book-divider"></div>
+        <p class="book-sub">Infrastructure, Safety, Reliability, and ROI Considerations for eTRU Deployment. Instant Access. No obligation.</p>
       </div>
-      <div class="form-right">
-        <p class="section-label">Get Your Copy</p>
-        <h2>Download the White Paper</h2>
-        <p>Infrastructure, Safety, Reliability, and ROI Considerations for eTRU Deployment.</p>
-        <form onsubmit="handleSubmit(event)">
-          <div class="form-grid-fields">
-            <div class="form-group"><label>First Name*</label><input type="text" placeholder="Jane" required /></div>
-            <div class="form-group"><label>Last Name*</label><input type="text" placeholder="Smith" required /></div>
-            <div class="form-group"><label>Company*</label><input type="text" placeholder="Acme Logistics" required /></div>
-            <div class="form-group"><label>Email*</label><input type="email" placeholder="jane@company.com" required /></div>
-            <div class="form-group full"><label>Phone (optional)</label><input type="tel" placeholder="(555) 000-0000" /></div>
-            <div class="form-group full">
-              <label>Fleet Size*</label>
-              <select required>
-                <option value="" disabled selected>Select fleet size</option>
-                <option>1–25 trailers</option>
-                <option>26–100 trailers</option>
-                <option>101–500 trailers</option>
-                <option>500+ trailers</option>
-              </select>
-            </div>
+    </div>
+
+    <div class="form-right">
+      <p class="section-label">Get Your Copy</p>
+      <h2>Get Your Copy of the White Paper</h2>
+      <p>Infrastructure, Safety, Reliability, and ROI Considerations for eTRU Deployment.</p>
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-fields">
+          <div class="form-group"><label>First Name *</label><input type="text" placeholder="Jane" required /></div>
+          <div class="form-group"><label>Last Name *</label><input type="text" placeholder="Smith" required /></div>
+          <div class="form-group"><label>Company *</label><input type="text" placeholder="Acme Logistics" required /></div>
+          <div class="form-group"><label>Email *</label><input type="email" placeholder="jane@company.com" required /></div>
+          <div class="form-group full"><label>Phone (optional)</label><input type="tel" placeholder="(555) 000-0000" /></div>
+          <div class="form-group full">
+            <label>Fleet Size *</label>
+            <select required>
+              <option value="" disabled selected>Select fleet size</option>
+              <option>1–25 trailers</option>
+              <option>26–100 trailers</option>
+              <option>101–500 trailers</option>
+              <option>500+ trailers</option>
+            </select>
           </div>
-          <button type="submit" class="btn btn-form"><i class="fa-solid fa-download" style="margin-right:8px;"></i>Download White Paper</button>
-          <p class="form-privacy"><i class="fa-solid fa-lock"></i>We respect your privacy. Your information will never be shared.</p>
-        </form>
-      </div>
+        </div>
+        <button type="submit" class="btn btn-form">
+          <i class="fa-solid fa-download"></i>
+          Download White Paper
+        </button>
+        <p class="form-privacy"><i class="fa-solid fa-lock"></i>We respect your privacy. Your information will never be shared.</p>
+      </form>
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
+<!-- ─── FOOTER CTA ─── -->
+<div class="footer-cta">
+  <h2>Need help evaluating your facility?</h2>
+  <p>We're happy to help.</p>
+  <a href="#form" class="btn btn-footer">Contact Us</a>
+</div>
+
+<!-- ─── FOOTER ─── -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <div class="logo">
-        <div class="logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
-        <div>SAFECONNECT<span class="logo-sub">Still goes for safety™</span></div>
-      </div>
+      <div class="footer-logo"><img src="assets/logo.png" alt="SafeConnect" /></div>
       <p>SafeConnect has spent decades helping refrigerated fleet operators implement safe, reliable electric standby infrastructure.</p>
       <div class="footer-contact">
         <a href="tel:8447812222"><i class="fa-solid fa-phone"></i>(844) 781-2222</a>
         <a href="mailto:info@safeconnectsystems.com"><i class="fa-solid fa-envelope"></i>info@safeconnectsystems.com</a>
-        <a href="#"><i class="fa-solid fa-globe"></i>www.safeconnectsystems.com</a>
+        <a href="https://www.safeconnectsystems.com" target="_blank"><i class="fa-solid fa-globe"></i>www.safeconnectsystems.com</a>
       </div>
-      <div class="footer-social" style="margin-top:16px;">
-        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <div class="footer-social">
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="X/Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
       </div>
     </div>
     <div class="footer-col">
@@ -643,7 +991,6 @@
         <li><a href="#">eTRU Systems</a></li>
         <li><a href="#">Shore Power</a></li>
         <li><a href="#">Data Solutions</a></li>
-        <li><a href="#">Blog</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -652,7 +999,6 @@
         <li><a href="#">White Papers</a></li>
         <li><a href="#">Case Studies</a></li>
         <li><a href="#">ROI Calculator</a></li>
-        <li><a href="#">Blog</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -685,7 +1031,7 @@
   function handleSubmit(e) {
     e.preventDefault();
     const btn = e.target.querySelector('button[type=submit]');
-    btn.innerHTML = '<i class="fa-solid fa-circle-check" style="margin-right:8px;"></i>Thank you! Check your email.';
+    btn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Thank you! Check your email.';
     btn.style.background = '#16a34a';
     btn.disabled = true;
   }
