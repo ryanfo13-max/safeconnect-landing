@@ -691,10 +691,11 @@
       .trust-item:nth-child(-n+2) { border-bottom: 1px solid var(--gray-200); }
       .trust-icon-svg { width: 40px; height: 40px; }
       .footer-top { grid-template-columns: 1fr; }
-      .consequence-row { flex-wrap: wrap; justify-content: center; gap: 20px; }
+      .consequence-row { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 0; }
       .consequence-item,
       .consequence-item:first-child,
       .consequence-item:last-child { flex: 0 0 auto; flex-direction: column; align-items: center; padding: 0 8px; border-right: none; }
+      .consequence-item:last-child { grid-column: 1 / -1; justify-self: center; }
       .consequence-item span { text-align: center; }
     }
   </style>
