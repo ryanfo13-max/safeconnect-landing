@@ -95,7 +95,7 @@
     /* ─── HERO ─── */
     .hero {
       color: var(--white);
-      padding: 84px 24px 96px;
+      padding: 42px 24px 48px;
       /* darker navy top-left fading to medium blue bottom-right */
       background: linear-gradient(135deg, #071528 0%, #0b1f3a 55%, #1a5cb0 100%);
     }
@@ -112,8 +112,11 @@
       font-weight: 800;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: #38bdf8;
       margin-bottom: 18px;
+      display: inline-block;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #38bdf8;
     }
     .hero h1 {
       font-size: clamp(2.1rem, 4.5vw, 3.25rem);
@@ -122,7 +125,7 @@
       margin-bottom: 20px;
     }
     .hero-desc {
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: rgba(255,255,255,0.82);
       margin-bottom: 36px;
       max-width: 540px;
@@ -136,11 +139,11 @@
     }
     .hero-trust svg { flex-shrink: 0; }
     .hero-trust span {
-      font-size: 0.9rem;
+      font-size: 0.875rem;
       color: rgba(255,255,255,0.78);
       line-height: 1.55;
     }
-    .hero-note { font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-top: 4px; }
+    .hero-note { font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-top: 4px; }
 
     /* Book image */
     .book-wrap {
@@ -164,7 +167,7 @@
       text-align: center;
     }
     .trust-bar p {
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 800;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -192,7 +195,7 @@
       flex-shrink: 0;
     }
     .trust-item span {
-      font-size: 0.82rem;
+      font-size: 0.875rem;
       font-weight: 700;
       color: #1a3770;
       text-align: left;
@@ -209,11 +212,9 @@
       text-transform: uppercase;
       color: var(--blue);
       margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      display: inline-block;
     }
-    .section-label::before { content: ''; display: block; width: 28px; height: 3px; background: var(--blue); border-radius: 2px; }
+    .section-label::before { display: none; }
 
     /* ─── WHY THIS GUIDE MATTERS ─── */
     .why-section { padding: var(--section-pad); }
@@ -230,11 +231,11 @@
       line-height: 1.08;
       margin-bottom: 28px;
     }
-    .why-left p { color: var(--gray-600); margin-bottom: 18px; font-size: 0.975rem; line-height: 1.75; }
+    .why-left p { color: var(--gray-600); margin-bottom: 18px; font-size: 1rem; line-height: 1.75; }
     .why-left strong { color: var(--navy); font-weight: 700; }
 
     /* ─── WHAT YOU'LL LEARN ─── */
-    .learn-label { margin-bottom: 20px; }
+    .learn-label { margin-bottom: 20px; padding-bottom: 8px; border-bottom: 2px solid var(--blue); }
     .learn-cards { display: flex; flex-direction: column; gap: 18px; }
     .learn-card {
       background: var(--gray-50);
@@ -303,7 +304,7 @@
 
     /* ─── FAQ ─── */
     .faq-section {
-      padding: var(--section-pad);
+      padding: 48px 24px;
       background: var(--gray-100);
     }
     .faq-section h2 {
@@ -340,7 +341,7 @@
     .faq-a {
       display: none;
       padding: 0 28px 24px;
-      font-size: 0.975rem;
+      font-size: 1rem;
       color: var(--gray-600);
       line-height: 1.75;
     }
@@ -367,10 +368,9 @@
     .poor-content {
       position: relative;
       z-index: 1;
-      padding: 60px 24px;
+      padding: 30px 24px;
     }
-    .poor-section .section-label { color: var(--accent); }
-    .poor-section .section-label::before { background: var(--accent); }
+    .poor-section .section-label { color: #38bdf8; padding-bottom: 8px; border-bottom: 2px solid #38bdf8; }
     .poor-grid {
       max-width: 1200px;
       margin: 0 auto;
@@ -412,7 +412,7 @@
 
     /* ─── WHY SAFECONNECT ─── */
     .why-sc-section {
-      padding: 72px 24px;
+      padding: 36px 24px;
       background: var(--white);
       border-top: 1px solid var(--gray-200);
       border-bottom: 1px solid var(--gray-200);
@@ -534,29 +534,11 @@
 
     /* ─── FOOTER CTA STRIP ─── */
     .footer-cta {
-      position: relative;
-      overflow: hidden;
+      background: var(--blue);
       padding: 72px 24px;
       text-align: center;
       color: var(--white);
     }
-    .footer-cta::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url('assets/photo-aerial-day.jpg');
-      background-size: cover;
-      background-position: center;
-      z-index: 0;
-    }
-    .footer-cta::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(7,21,40,1.00) 0%, rgba(7,21,40,0.95) 72%, rgba(7,21,40,0) 100%);
-      z-index: 1;
-    }
-    .footer-cta > * { position: relative; z-index: 2; }
     .footer-cta h2 {
       font-size: clamp(1.5rem, 3vw, 2.2rem);
       font-weight: 900;
@@ -670,12 +652,12 @@
     </a>
     <div class="header-right">
       <nav>
-        <a href="#">SafeConnect Products</a>
-        <a href="#">Certifications</a>
-        <a href="#">Incentives</a>
-        <a href="#">eTRU Guide</a>
+        <a href="https://www.safeconnectsystems.com/products/" target="_blank" rel="noopener">SafeConnect Products</a>
+        <a href="https://www.safeconnectsystems.com/certifications-incentives/" target="_blank" rel="noopener">Certifications</a>
+        <a href="https://www.safeconnectsystems.com/certifications-incentives/" target="_blank" rel="noopener">Incentives</a>
+        <a href="https://www.safeconnectsystems.com/the-ultimate-user-guide-to-etru/" target="_blank" rel="noopener">eTRU Guide</a>
       </nav>
-      <a href="#form" class="btn btn-nav">Contact Us</a>
+      <a href="https://www.safeconnectsystems.com/contact/" target="_blank" rel="noopener" class="btn btn-nav">Contact Us</a>
       <button class="hamburger" aria-label="Open menu" onclick="this.closest('.header-inner').querySelector('nav').style.display='block'">
         <i class="fa-solid fa-bars"></i>
       </button>
