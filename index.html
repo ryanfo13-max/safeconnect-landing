@@ -408,17 +408,19 @@
     }
     .consequence-item {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       gap: 12px;
-      padding: 0 24px;
+      flex: 1;
+      padding: 0 12px;
       border-right: 1px solid rgba(255,255,255,0.25);
+      min-width: 0;
     }
     .consequence-item:first-child { padding-left: 0; }
     .consequence-item:last-child { border-right: none; padding-right: 0; }
-    .consequence-item i { font-size: 3rem; color: rgba(255,255,255,0.82); line-height: 1; }
+    .consequence-item i { font-size: 3rem; color: rgba(255,255,255,0.82); line-height: 1; flex-shrink: 0; }
     .consequence-icon-svg { width: 48px; height: 48px; flex-shrink: 0; }
-    .consequence-item span { font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.75); text-align: center; line-height: 1.35; max-width: 88px; }
+    .consequence-item span { font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.75); text-align: left; line-height: 1.35; min-width: 0; }
     .poor-right {
       padding-left: 0;
     }
