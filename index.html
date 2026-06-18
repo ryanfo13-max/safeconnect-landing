@@ -174,27 +174,30 @@
     .trust-icons {
       display: flex;
       justify-content: center;
-      align-items: flex-start;
-      gap: 56px;
+      align-items: center;
       flex-wrap: wrap;
     }
     .trust-item {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
+      padding: 8px 40px;
+      border-right: 1px solid var(--gray-200);
     }
-    .trust-icon-img {
-      height: 56px;
-      width: auto;
+    .trust-item:last-child { border-right: none; }
+    .trust-icon-svg {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
     }
     .trust-item span {
       font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--gray-600);
-      text-align: center;
-      max-width: 90px;
-      line-height: 1.4;
+      font-weight: 700;
+      color: #1a3770;
+      text-align: left;
+      line-height: 1.35;
+      max-width: 96px;
     }
 
     /* ─── SECTION SHARED ─── */
@@ -645,9 +648,9 @@
       :root { --section-pad: 64px 20px; }
       .form-fields { grid-template-columns: 1fr; }
       .consequence-grid { grid-template-columns: 1fr 1fr; }
-      .trust-icons { gap: 28px; }
+      .trust-item { padding: 8px 20px; }
+      .trust-icon-svg { width: 40px; height: 40px; }
       .footer-top { grid-template-columns: 1fr; }
-      .trust-icon-img { height: 44px; }
     }
   </style>
 </head>
@@ -707,19 +710,47 @@
   <p>Trusted by Refrigerated Fleet Operators Across North America</p>
   <div class="trust-icons">
     <div class="trust-item">
-      <img src="assets/icon-grocery.png" alt="Grocery Distribution icon" class="trust-icon-img" />
+      <!-- Grocery: warehouse/store building with shelves -->
+      <svg class="trust-icon-svg" viewBox="0 0 48 48" fill="none" stroke="#1a3770" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M6 22v20h36V22L24 7 6 22z"/>
+        <line x1="12" y1="33" x2="36" y2="33"/>
+        <rect x="13" y="24" width="6" height="9" rx="0.5"/>
+        <rect x="21" y="24" width="6" height="9" rx="0.5"/>
+        <rect x="29" y="24" width="6" height="9" rx="0.5"/>
+      </svg>
       <span>Grocery Distribution</span>
     </div>
     <div class="trust-item">
-      <img src="assets/icon-foodservice.png" alt="Foodservice Distribution icon" class="trust-icon-img" />
+      <!-- Foodservice: cloche dome with handle and base plate -->
+      <svg class="trust-icon-svg" viewBox="0 0 48 48" fill="none" stroke="#1a3770" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M8 32a16 16 0 0 1 32 0"/>
+        <line x1="4" y1="32" x2="44" y2="32"/>
+        <line x1="10" y1="38" x2="38" y2="38"/>
+        <circle cx="24" cy="13" r="2.5"/>
+        <line x1="24" y1="15.5" x2="24" y2="16"/>
+      </svg>
       <span>Foodservice Distribution</span>
     </div>
     <div class="trust-item">
-      <img src="assets/icon-coldchain.png" alt="Cold Chain Logistics icon" class="trust-icon-img" />
+      <!-- Cold Chain: snowflake inside hexagon -->
+      <svg class="trust-icon-svg" viewBox="0 0 48 48" fill="none" stroke="#1a3770" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M24 5l16.56 9.5v19L24 43 7.44 33.5v-19z"/>
+        <line x1="24" y1="14" x2="24" y2="34"/>
+        <line x1="14.54" y1="19" x2="33.46" y2="29"/>
+        <line x1="33.46" y1="19" x2="14.54" y2="29"/>
+        <path d="M24 14l-2.5 3.5m2.5-3.5 2.5 3.5"/>
+        <path d="M24 34l-2.5-3.5m2.5 3.5 2.5-3.5"/>
+        <path d="M14.54 19l3.5 1.5m-3.5-1.5-.5 4"/>
+        <path d="M33.46 19l-3.5 1.5m3.5-1.5 .5 4"/>
+      </svg>
       <span>Cold Chain Logistics</span>
     </div>
     <div class="trust-item">
-      <img src="assets/icon-dairy.png" alt="Dairy Operations icon" class="trust-icon-img" />
+      <!-- Dairy: milk bottle outline -->
+      <svg class="trust-icon-svg" viewBox="0 0 48 48" fill="none" stroke="#1a3770" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M17 5h14v7l4 8v21a2 2 0 0 1-2 2H15a2 2 0 0 1-2-2V20l4-8V5z"/>
+        <line x1="13" y1="20" x2="35" y2="20"/>
+      </svg>
       <span>Dairy Operations</span>
     </div>
   </div>
