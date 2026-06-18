@@ -391,7 +391,7 @@
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 2.5fr 2fr;
+      grid-template-columns: 3fr 1fr;
       gap: 48px;
       align-items: center;
     }
@@ -403,7 +403,7 @@
     }
     .consequence-row {
       display: flex;
-      gap: 22px;
+      gap: 0;
       flex-wrap: nowrap;
     }
     .consequence-item {
@@ -411,15 +411,19 @@
       flex-direction: column;
       align-items: center;
       gap: 12px;
+      padding: 0 24px;
+      border-right: 1px solid rgba(255,255,255,0.25);
     }
-    .consequence-item i { font-size: 4rem; color: rgba(255,255,255,0.82); line-height: 1; }
-    .consequence-icon-svg { width: 64px; height: 64px; flex-shrink: 0; }
+    .consequence-item:first-child { padding-left: 0; }
+    .consequence-item:last-child { border-right: none; padding-right: 0; }
+    .consequence-item i { font-size: 3rem; color: rgba(255,255,255,0.82); line-height: 1; }
+    .consequence-icon-svg { width: 48px; height: 48px; flex-shrink: 0; }
     .consequence-item span { font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.75); text-align: center; line-height: 1.35; max-width: 88px; }
     .poor-right {
       padding-left: 0;
     }
     .poor-right p {
-      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
       font-weight: 600;
       color: var(--white);
       line-height: 1.6;
@@ -442,7 +446,7 @@
       align-items: center;
     }
     .why-sc-heading {
-      font-size: 1.35rem;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
       font-weight: 900;
       color: var(--navy);
       padding-bottom: 12px;
@@ -634,9 +638,10 @@
       .book-mockup { max-width: 260px; margin: 0 auto; }
       .why-grid { grid-template-columns: 1fr; gap: 40px; }
       .poor-grid { grid-template-columns: 1fr; gap: 40px; }
-      .consequence-row { gap: 20px; }
-      .consequence-item i { font-size: 3rem; }
-      .consequence-icon-svg { width: 48px; height: 48px; }
+      .consequence-row { flex-wrap: wrap; justify-content: center; gap: 16px; }
+      .consequence-item,
+      .consequence-item:first-child,
+      .consequence-item:last-child { padding: 0 12px; border-right: none; }
       .why-sc-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
       .why-sc-heading { display: block; }
       .focus-icons-row { justify-content: center; }
@@ -651,10 +656,13 @@
     @media (max-width: 620px) {
       :root { --section-pad: 64px 20px; }
       .form-fields { grid-template-columns: 1fr; }
-      .consequence-grid { grid-template-columns: 1fr 1fr; }
       .trust-item { padding: 8px 20px; }
       .trust-icon-svg { width: 40px; height: 40px; }
       .footer-top { grid-template-columns: 1fr; }
+      .consequence-row { flex-wrap: wrap; justify-content: center; gap: 20px; }
+      .consequence-item,
+      .consequence-item:first-child,
+      .consequence-item:last-child { padding: 0 8px; border-right: none; }
     }
   </style>
 </head>
