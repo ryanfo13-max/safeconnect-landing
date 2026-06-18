@@ -355,9 +355,9 @@
     .poor-bg {
       position: absolute;
       inset: 0;
-      background-image: url('assets/photo-truck-highway.jpg');
+      background-image: url('assets/photo-facility-aerial.jpg');
       background-size: cover;
-      background-position: center right;
+      background-position: center;
     }
     .poor-bg-overlay {
       position: absolute;
@@ -367,7 +367,7 @@
     .poor-content {
       position: relative;
       z-index: 1;
-      padding: var(--section-pad);
+      padding: 60px 24px;
     }
     .poor-section .section-label { color: var(--accent); }
     .poor-section .section-label::before { background: var(--accent); }
@@ -375,38 +375,30 @@
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
+      grid-template-columns: 3fr 2fr;
+      gap: 48px;
       align-items: center;
     }
     .poor-left h2 {
       font-size: clamp(1.7rem, 3vw, 2.4rem);
       font-weight: 900;
       line-height: 1.15;
-      margin-bottom: 10px;
+      margin-bottom: 28px;
     }
     .consequence-row {
       display: flex;
-      gap: 28px;
-      flex-wrap: wrap;
+      gap: 22px;
+      flex-wrap: nowrap;
     }
     .consequence-item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
-    .consequence-circle {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      border: 1.5px solid rgba(255,255,255,0.52);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .consequence-circle i { font-size: 1.35rem; color: rgba(255,255,255,0.82); }
-    .consequence-item span { font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.72); text-align: center; line-height: 1.35; max-width: 74px; }
+    .consequence-item i { font-size: 4rem; color: rgba(255,255,255,0.82); line-height: 1; }
+    .consequence-icon-svg { width: 64px; height: 64px; flex-shrink: 0; }
+    .consequence-item span { font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.75); text-align: center; line-height: 1.35; max-width: 88px; }
     .poor-right {
       padding-left: 16px;
     }
@@ -640,9 +632,9 @@
       .book-mockup { max-width: 260px; margin: 0 auto; }
       .why-grid { grid-template-columns: 1fr; gap: 40px; }
       .poor-grid { grid-template-columns: 1fr; gap: 40px; }
-      .consequence-row { gap: 18px; }
-      .consequence-circle { width: 50px; height: 50px; }
-      .consequence-circle i { font-size: 1.1rem; }
+      .consequence-row { gap: 20px; }
+      .consequence-item i { font-size: 3rem; }
+      .consequence-icon-svg { width: 48px; height: 48px; }
       .why-sc-grid { grid-template-columns: 1fr; gap: 40px; }
       .form-inner { grid-template-columns: 1fr; }
       .form-book-wrap { display: none; }
@@ -873,23 +865,27 @@
         <h2>Poor planning can lead to:</h2>
         <div class="consequence-row">
           <div class="consequence-item">
-            <div class="consequence-circle"><i class="fa-regular fa-clock"></i></div>
+            <i class="fa-regular fa-clock"></i>
             <span>Utility delays</span>
           </div>
           <div class="consequence-item">
-            <div class="consequence-circle"><i class="fa-solid fa-wrench"></i></div>
+            <i class="fa-solid fa-wrench"></i>
             <span>Infrastructure rework</span>
           </div>
           <div class="consequence-item">
-            <div class="consequence-circle"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <i class="fa-solid fa-triangle-exclamation"></i>
             <span>Operational disruption</span>
           </div>
           <div class="consequence-item">
-            <div class="consequence-circle"><i class="fa-regular fa-shield"></i></div>
+            <svg class="consequence-icon-svg" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.82)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <line x1="12" y1="8" x2="12" y2="13"/>
+              <circle cx="12" cy="16.5" r="0.8" fill="rgba(255,255,255,0.82)" stroke="none"/>
+            </svg>
             <span>Safety concerns</span>
           </div>
           <div class="consequence-item">
-            <div class="consequence-circle"><i class="fa-solid fa-dollar-sign"></i></div>
+            <i class="fa-solid fa-dollar-sign"></i>
             <span>Unexpected project costs</span>
           </div>
         </div>
