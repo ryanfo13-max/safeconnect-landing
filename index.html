@@ -74,12 +74,11 @@
       margin: 0 auto;
       padding: 0 32px;
       height: 80px;
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
+      display: flex;
       align-items: center;
     }
     .logo-img { height: 72px; width: auto; }
-    .header-right { display: flex; align-items: center; gap: 4px; justify-content: flex-end; }
+    .header-right { display: flex; align-items: center; gap: 4px; margin-left: auto; }
     nav { display: flex; align-items: center; gap: 4px; }
     nav a {
       padding: 9px 14px;
@@ -666,7 +665,6 @@
 <!-- ─── HEADER ─── -->
 <header>
   <div class="header-inner">
-    <div></div>
     <a href="#">
       <img src="assets/logo.png" alt="SafeConnect" class="logo-img" />
     </a>
