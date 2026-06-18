@@ -632,7 +632,32 @@
 
     /* ─── MOBILE ─── */
     @media (max-width: 960px) {
-      nav { display: none; }
+      nav {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        border-bottom: 2px solid var(--gray-200);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        z-index: 199;
+        padding: 4px 0;
+      }
+      nav.open { display: flex; }
+      nav a {
+        padding: 15px 24px;
+        border-radius: 0;
+        border-bottom: 1px solid var(--gray-100);
+        font-size: 0.875rem;
+        color: var(--navy);
+        white-space: normal;
+      }
+      nav a:last-child { border-bottom: none; }
+      nav a::after { display: none; }
       .hamburger { display: flex; }
       .hero-inner { grid-template-columns: 1fr; gap: 40px; }
       .book-mockup { max-width: 260px; margin: 0 auto; }
@@ -656,7 +681,10 @@
     @media (max-width: 620px) {
       :root { --section-pad: 64px 20px; }
       .form-fields { grid-template-columns: 1fr; }
-      .trust-item { padding: 8px 20px; }
+      .trust-icons { display: grid; grid-template-columns: 1fr 1fr; }
+      .trust-item { padding: 16px 16px; border-right: 1px solid var(--gray-200); }
+      .trust-item:nth-child(2n) { border-right: none; }
+      .trust-item:nth-child(-n+2) { border-bottom: 1px solid var(--gray-200); }
       .trust-icon-svg { width: 40px; height: 40px; }
       .footer-top { grid-template-columns: 1fr; }
       .consequence-row { flex-wrap: wrap; justify-content: center; gap: 20px; }
@@ -682,7 +710,7 @@
         <a href="https://www.safeconnectsystems.com/the-ultimate-user-guide-to-etru/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square nav-ext-icon" aria-hidden="true"></i>eTRU Guide</a>
       </nav>
       <a href="https://www.safeconnectsystems.com/contact/" target="_blank" rel="noopener" class="btn btn-nav">Contact Us</a>
-      <button class="hamburger" aria-label="Open menu" onclick="this.closest('.header-inner').querySelector('nav').style.display='block'">
+      <button class="hamburger" aria-label="Toggle menu" onclick="toggleMobileNav()">
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
@@ -1061,6 +1089,21 @@
 </footer>
 
 <script>
+  function toggleMobileNav() {
+    const nav = document.querySelector('header nav');
+    const icon = document.querySelector('.hamburger i');
+    const isOpen = nav.classList.toggle('open');
+    icon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+  }
+
+  // Close nav when a link is tapped
+  document.querySelectorAll('header nav a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      document.querySelector('header nav').classList.remove('open');
+      document.querySelector('.hamburger i').className = 'fa-solid fa-bars';
+    });
+  });
+
   function toggleFaq(btn) {
     const isOpen = btn.classList.contains('open');
     document.querySelectorAll('.faq-q').forEach(b => b.classList.remove('open'));
