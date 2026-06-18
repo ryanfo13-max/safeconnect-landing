@@ -223,12 +223,12 @@
       gap: 72px;
       align-items: start;
     }
-    .why-left h2 {
-      font-size: clamp(1.7rem, 3vw, 2.4rem);
+    .why-section-heading {
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
       font-weight: 900;
       color: var(--navy);
-      line-height: 1.15;
-      margin-bottom: 24px;
+      line-height: 1.08;
+      margin-bottom: 28px;
     }
     .why-left p { color: var(--gray-600); margin-bottom: 18px; font-size: 0.975rem; line-height: 1.75; }
     .why-left strong { color: var(--navy); font-weight: 700; }
@@ -355,14 +355,14 @@
     .poor-bg {
       position: absolute;
       inset: 0;
-      background-image: url('assets/photo-aerial-night.jpg');
+      background-image: url('assets/photo-truck-highway.jpg');
       background-size: cover;
-      background-position: center;
+      background-position: center right;
     }
     .poor-bg-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(7,21,40,1.00) 0%, rgba(7,21,40,0.95) 72%, rgba(7,21,40,0) 100%);
+      background: linear-gradient(to right, rgba(7,21,40,1.00) 0%, rgba(7,21,40,0.98) 38%, rgba(7,21,40,0.72) 62%, rgba(7,21,40,0.08) 100%);
     }
     .poor-content {
       position: relative;
@@ -385,34 +385,38 @@
       line-height: 1.15;
       margin-bottom: 10px;
     }
-    .poor-left > p { color: rgba(255,255,255,0.65); font-size: 0.95rem; margin-bottom: 36px; }
-    .consequence-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+    .consequence-row {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
     }
     .consequence-item {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 10px;
-      padding: 22px 14px;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
     }
-    .consequence-item i { font-size: 1.75rem; color: var(--accent); margin-bottom: 10px; display: block; }
-    .consequence-item span { font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.88); line-height: 1.4; display: block; }
+    .consequence-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,0.52);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .consequence-circle i { font-size: 1.35rem; color: rgba(255,255,255,0.82); }
+    .consequence-item span { font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.72); text-align: center; line-height: 1.35; max-width: 74px; }
     .poor-right {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 14px;
-      padding: 40px 36px;
+      padding-left: 16px;
     }
     .poor-right p {
-      font-size: 1.15rem;
-      font-weight: 500;
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      font-weight: 600;
       color: var(--white);
-      line-height: 1.7;
+      line-height: 1.6;
     }
-    .poor-right strong { color: var(--accent); font-weight: 800; }
+    .poor-right strong { color: #38bdf8; font-weight: 700; }
 
     /* ─── WHY SAFECONNECT ─── */
     .why-sc-section { padding: var(--section-pad); }
@@ -636,7 +640,9 @@
       .book-mockup { max-width: 260px; margin: 0 auto; }
       .why-grid { grid-template-columns: 1fr; gap: 40px; }
       .poor-grid { grid-template-columns: 1fr; gap: 40px; }
-      .consequence-grid { grid-template-columns: repeat(2, 1fr); }
+      .consequence-row { gap: 18px; }
+      .consequence-circle { width: 50px; height: 50px; }
+      .consequence-circle i { font-size: 1.1rem; }
       .why-sc-grid { grid-template-columns: 1fr; gap: 40px; }
       .form-inner { grid-template-columns: 1fr; }
       .form-book-wrap { display: none; }
@@ -761,8 +767,7 @@
   <div class="container">
     <div class="why-grid">
       <div class="why-left">
-        <p class="section-label">Why This Guide Matters</p>
-        <h2>Curious about whether your facility can support eTRU? We can help.</h2>
+        <h2 class="why-section-heading">Why This Guide Matters</h2>
         <p>The challenge is making sure your <strong>infrastructure, operational workflows, and safety systems</strong> are aligned before major investments are made.</p>
         <p>Our guide was developed to help fleet and operations leaders evaluate what it actually takes to prepare a facility for electric standby.</p>
       </div>
@@ -796,17 +801,6 @@
     </div>
   </div>
 </section>
-
-<!-- ─── PHOTO STRIP ─── -->
-<div class="photo-strip">
-  <img src="assets/photo-truck-dock.jpg" alt="Refrigerated fleet at distribution center" />
-  <div class="photo-strip-overlay">
-    <div class="photo-strip-text">
-      <p>Real-World eTRU Deployments</p>
-      <h3>Infrastructure decisions made before equipment arrives determine whether electrification succeeds.</h3>
-    </div>
-  </div>
-</div>
 
 <!-- ─── FAQ ─── -->
 <section class="faq-section">
@@ -877,18 +871,31 @@
       <div class="poor-left">
         <p class="section-label">The Real Cost of Getting It Wrong</p>
         <h2>Poor planning can lead to:</h2>
-        <p>Decisions made without full infrastructure context create costly downstream problems.</p>
-        <div class="consequence-grid">
-          <div class="consequence-item"><i class="fa-solid fa-clock"></i><span>Utility Delays</span></div>
-          <div class="consequence-item"><i class="fa-solid fa-wrench"></i><span>Infrastructure Rework</span></div>
-          <div class="consequence-item"><i class="fa-solid fa-triangle-exclamation"></i><span>Operational Disruption</span></div>
-          <div class="consequence-item"><i class="fa-solid fa-shield-halved"></i><span>Safety Concerns</span></div>
-          <div class="consequence-item"><i class="fa-solid fa-dollar-sign"></i><span>Unexpected Project Costs</span></div>
-          <div class="consequence-item"><i class="fa-solid fa-xmark"></i><span>Failed Rollouts</span></div>
+        <div class="consequence-row">
+          <div class="consequence-item">
+            <div class="consequence-circle"><i class="fa-regular fa-clock"></i></div>
+            <span>Utility delays</span>
+          </div>
+          <div class="consequence-item">
+            <div class="consequence-circle"><i class="fa-solid fa-wrench"></i></div>
+            <span>Infrastructure rework</span>
+          </div>
+          <div class="consequence-item">
+            <div class="consequence-circle"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <span>Operational disruption</span>
+          </div>
+          <div class="consequence-item">
+            <div class="consequence-circle"><i class="fa-regular fa-shield"></i></div>
+            <span>Safety concerns</span>
+          </div>
+          <div class="consequence-item">
+            <div class="consequence-circle"><i class="fa-solid fa-dollar-sign"></i></div>
+            <span>Unexpected project costs</span>
+          </div>
         </div>
       </div>
       <div class="poor-right">
-        <p>The most successful electrification projects begin with a <strong>clear understanding of facility requirements</strong> — before equipment is ordered, before utility applications are filed, and before the first pedestal is installed.</p>
+        <p>The most successful electrification projects begin with a <strong>clear understanding of facility requirements.</strong></p>
       </div>
     </div>
   </div>
