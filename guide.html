@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Get Your Facility Ready for eTRU | SafeConnect</title>
+  <link href="https://fonts.cdnfonts.com/css/glacial-indifference" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0b1f3a;
+      --navy-dark:  #071528;
+      --blue:       #1565c0;
+      --blue-light: #1976d2;
+      --accent:     #f5a623;
+      --white:      #ffffff;
+      --gray-100:   #f3f6f9;
+      --gray-600:   #4a5568;
+      --radius:     6px;
+    }
+
+    body {
+      font-family: 'Glacial Indifference', sans-serif;
+      color: #222;
+      background: var(--white);
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--navy-dark);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo-link img {
+      height: 44px;
+      display: block;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    nav a {
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--white); }
+    .btn-contact {
+      background: var(--blue);
+      color: var(--white) !important;
+      padding: 9px 20px;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-contact:hover { background: var(--blue-light) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #0d2b52 100%);
+      padding: 80px 32px 90px;
+      text-align: center;
+      color: var(--white);
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #4dd0e1;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      max-width: 720px;
+      margin: 0 auto 20px;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.78);
+      max-width: 620px;
+      margin: 0 auto 36px;
+      line-height: 1.65;
+    }
+    .btn-download {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--navy-dark);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 36px;
+      border-radius: var(--radius);
+      letter-spacing: 0.02em;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn-download:hover { opacity: 0.92; transform: translateY(-1px); }
+
+    /* ── ARTICLE ── */
+    .article-wrap {
+      background: var(--white);
+      padding: 64px 32px 80px;
+    }
+    .article {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Short answer intro block */
+    .intro-block {
+      background: #eaf1fb;
+      border-left: 5px solid var(--blue);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 24px 28px;
+      margin-bottom: 52px;
+      font-size: 1.03rem;
+      line-height: 1.75;
+      color: #1a2a3a;
+    }
+    .intro-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+
+    /* Section headings */
+    .article h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 48px 0 16px;
+      line-height: 1.25;
+    }
+    .article h2:first-of-type { margin-top: 0; }
+
+    /* Step blocks */
+    .step-block {
+      margin: 40px 0;
+    }
+    .step-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 6px;
+    }
+    .step-block h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    /* Body paragraphs */
+    .article p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--gray-600);
+      margin-bottom: 20px;
+    }
+    .article p:last-child { margin-bottom: 0; }
+
+    /* Lists */
+    .article ul {
+      margin: 14px 0 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .article ul li {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--gray-600);
+    }
+
+    /* ── CTA BLOCK ── */
+    .cta-block {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 44px 40px;
+      text-align: center;
+      margin: 56px 0 0;
+    }
+    .cta-block p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.85);
+      margin: 0;
+    }
+    .cta-block a {
+      color: #4dd0e1;
+      text-decoration: none;
+    }
+    .cta-block a:hover { text-decoration: underline; }
+
+    /* ── FAQ ACCORDION ── */
+    .faq-section {
+      background: var(--gray-100);
+      padding: 64px 32px 80px;
+    }
+    .faq-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-inner h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .faq-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      margin-bottom: 10px;
+      border: 1px solid #dce4ef;
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 24px;
+      text-align: left;
+      cursor: pointer;
+      font-family: 'Glacial Indifference', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      transition: background 0.15s;
+    }
+    .faq-question:hover { background: var(--gray-100); }
+    .faq-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1;
+      transition: transform 0.25s, background 0.2s;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      background: var(--navy);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+    }
+    .faq-answer-inner {
+      padding: 4px 24px 22px;
+      font-size: 0.97rem;
+      line-height: 1.78;
+      color: var(--gray-600);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,0.72);
+      padding: 56px 32px 32px;
+    }
+    .footer-top {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 48px;
+    }
+    .footer-brand img {
+      height: 40px;
+      margin-bottom: 18px;
+    }
+    .footer-brand p {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.6);
+      max-width: 360px;
+      margin-bottom: 20px;
+    }
+    .footer-contact a {
+      display: block;
+      color: rgba(255,255,255,0.72);
+      text-decoration: none;
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+      transition: color 0.2s;
+    }
+    .footer-contact a:hover { color: var(--white); }
+    .footer-socials {
+      display: flex;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+    .social-icon:hover { background: rgba(255,255,255,0.2); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .footer-bottom p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .header-inner { padding: 0 18px; gap: 14px; }
+      nav { gap: 14px; }
+      nav a { font-size: 0.8rem; }
+      .hero { padding: 56px 18px 64px; }
+      .article-wrap { padding: 48px 18px 60px; }
+      .faq-section { padding: 48px 18px 60px; }
+      footer { padding: 48px 18px 28px; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .cta-block { padding: 36px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="header-inner">
+    <a class="logo-link" href="index.html">
+      <img src="assets/logo.png" alt="SafeConnect Systems" />
+    </a>
+    <nav>
+      <a href="https://safeconnectsystems.com/products" target="_blank" rel="noopener">SafeConnect Products</a>
+      <a href="https://safeconnectsystems.com/certifications" target="_blank" rel="noopener">Certifications</a>
+      <a href="https://safeconnectsystems.com/incentives" target="_blank" rel="noopener">Incentives</a>
+      <a href="https://safeconnectsystems.com/etru-guide" target="_blank" rel="noopener">eTRU Guide</a>
+      <a class="btn-contact" href="index.html#form">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <span class="hero-eyebrow">Free Guide</span>
+  <h1>How to Get Your Facility Ready for eTRU</h1>
+  <p>A practical guide to infrastructure planning, operational readiness, safety, and ROI for refrigerated fleets evaluating electric standby.</p>
+  <a class="btn-download" href="assets/etru-facility-guide.pdf" download>Download the PDF</a>
+</section>
+
+<!-- ── ARTICLE ── -->
+<section class="article-wrap">
+  <div class="article">
+
+    <!-- Short Answer -->
+    <div class="intro-block">
+      <div class="intro-label">Short Answer</div>
+      To prepare your facility for electric TRU (eTRU) standby, you need to evaluate your available power, electrical capacity, where power will be delivered across the yard, and how the system will be installed safely. Most facilities can support eTRU with the right planning, but the details matter — and that's where projects tend to succeed or stall.
+    </div>
+
+    <!-- Section 1 -->
+    <h2>What does it mean to prepare a facility for eTRU?</h2>
+    <p>Preparing your facility for eTRU means making sure you can reliably supply electrical power to refrigerated trailers while they're stationary — whether they're at the dock or staged in the yard. On the surface, that sounds straightforward. In practice, it touches several parts of your operation at once: your electrical infrastructure, your yard layout, and how trailers actually move through your facility during the day. Facilities that take the time to think through those pieces upfront tend to have a much smoother transition.</p>
+
+    <!-- Step 1 -->
+    <div class="step-block">
+      <div class="step-label">Step 1</div>
+      <h3>Start with your power source</h3>
+      <p>The first question is whether your facility has access to the right type of power. Most eTRU systems run on three-phase power, typically 480V (preferred) or 230V. If that's already in place, you're ahead of the game. If not, it doesn't mean electrification is off the table — but it does mean you'll need to involve your utility provider early. In many cases, utilities can upgrade or extend service, but those timelines can impact your rollout if they're not accounted for upfront.</p>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step-block">
+      <div class="step-label">Step 2</div>
+      <h3>Make sure you have enough capacity</h3>
+      <p>Having the right voltage is only part of the equation. You also need to be able to support the number of trailers that may be plugged in at the same time. This is where capacity planning comes in. A facility might technically have the right power available, but still run into issues if multiple trailers are drawing power simultaneously during peak periods. That's why it's important to look at your operation as a whole: when trailers arrive, how long they dwell, and how many are likely to be connected at once. Planning around those realities helps avoid bottlenecks later.</p>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step-block">
+      <div class="step-label">Step 3</div>
+      <h3>Think carefully about where power needs to go</h3>
+      <p>One of the most common challenges is getting power to the right places. In most facilities, trailers move between dock doors, staging areas, and different parts of the yard throughout the day. That means power needs to be available where trailers actually spend time — not just where it's easiest to install. When placement isn't aligned with real workflows, it can create small inefficiencies that add up quickly: extra steps for drivers, longer connection times, or workarounds that weren't part of the original plan.</p>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step-block">
+      <div class="step-label">Step 4</div>
+      <h3>Match the system to your operation</h3>
+      <p>There's no one-size-fits-all setup for eTRU infrastructure. Some facilities are best served by dock-based connections. Others benefit from yard pedestals or shared configurations that support multiple trailers from a single circuit. The right approach depends on how your facility operates day to day — how many trailers you handle, how space is laid out, and how power can be distributed efficiently. Choosing a configuration that fits your operation upfront can make a big difference in both installation cost and long-term usability.</p>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="step-block">
+      <div class="step-label">Step 5</div>
+      <h3>Design for safety and reliability from the start</h3>
+      <p>Because eTRU systems involve high-voltage power, safety truly needs to be built into the design. That includes thinking through how connections are made and broken, where equipment is positioned, and how to minimize risk in a busy yard environment. Situations like accidental drive-offs or exposed connections can lead to equipment damage or safety concerns if they're not addressed properly. Well-designed systems account for those realities and are built to operate reliably within them — and not just under ideal conditions.</p>
+    </div>
+
+    <!-- Common Mistakes -->
+    <h2>Common mistakes to avoid</h2>
+    <p>A lot of challenges with electrification don't come from how the technological transition is planned out. Facilities often run into trouble when they underestimate how much power they'll need, wait too long to involve utility providers, or focus heavily on equipment without considering how it will actually function in the yard. In other cases, electrification is treated as a simple upgrade, when in reality it changes how parts of the operation work day to day. Taking a more holistic view early on helps avoid those issues.</p>
+
+    <!-- ROI -->
+    <h2>What does ROI actually depend on?</h2>
+    <p>When people think about ROI, they often focus on fuel savings first. That's part of the picture, but it's not the whole story. In practice, the return tends to come from a combination of factors — reduced diesel use, fewer maintenance demands, longer equipment life, and more predictable energy costs. Over time, those benefits stack up, especially in operations where trailers spend significant time in the yard. Facilities that plan infrastructure carefully tend to see those returns sooner, because they avoid rework and minimize disruption during implementation.</p>
+
+    <!-- Bottom Line -->
+    <h2>The Bottom Line</h2>
+    <p>Most facilities can support eTRU — but the difference between a smooth rollout and a difficult one usually comes down to planning. Understanding your power needs, aligning infrastructure with real operations, and designing with safety in mind are what set successful projects apart.</p>
+
+    <!-- Thinking About eTRU -->
+    <h2>Thinking About eTRU? Start with Your Facility</h2>
+    <p>Every facility is different — and the details matter. If you're evaluating electric standby, the most effective place to start is with a clear understanding of your current infrastructure and how your operation actually runs day to day.</p>
+    <p>A facility assessment can help you:</p>
+    <ul>
+      <li>Identify power and capacity gaps</li>
+      <li>Understand what upgrades may be required</li>
+      <li>Estimate installation scope and cost</li>
+      <li>Avoid common planning mistakes</li>
+    </ul>
+    <p>More importantly, it helps you make the decision with confidence — before committing time and capital.</p>
+
+    <!-- CTA Block -->
+    <div class="cta-block">
+      <p>Ready to get started? Visit <a href="https://safeconnectsystems.com" target="_blank" rel="noopener">safeconnectsystems.com</a>, email <a href="mailto:info@SafeConnectSystems.com">info@SafeConnectSystems.com</a>, or call <a href="tel:+18447872332">(844) 787-2332</a>. If you're planning a conversion to eTRU and want a no-obligation quote, we're happy to help.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        How much power do I need to support eTRU at my facility?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" role="region">
+        <div class="faq-answer-inner">The amount of power required depends on how many trailers you plan to support at once and how long they remain plugged in. Most facilities need to evaluate peak demand — when multiple trailers are drawing power simultaneously — to ensure they have sufficient electrical capacity.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        Can existing facilities be upgraded for eTRU, or do they need to be rebuilt?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" role="region">
+        <div class="faq-answer-inner">Most existing facilities can be upgraded to support eTRU. In many cases, this involves adding or expanding electrical service, upgrading panels, and distributing power to dock doors or yard locations. Early coordination with your utility provider is key.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        What voltage is required for electric standby systems?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" role="region">
+        <div class="faq-answer-inner">eTRU systems typically operate on three-phase power, most commonly 480V or 230V. The optimal setup depends on your facility and equipment, but 480V is often preferred for efficiency.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        What are the biggest challenges when preparing a facility for eTRU?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" role="region">
+        <div class="faq-answer-inner">The most common challenges include limited electrical capacity, delays in utility upgrades, and aligning power distribution with real-world yard operations. Operational flow — where trailers sit and for how long — is often overlooked but critical.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        How long does it take to get a facility ready for eTRU?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" role="region">
+        <div class="faq-answer-inner">Timelines vary depending on infrastructure upgrades and utility involvement. Some projects can move quickly if power is already available, while others may take longer if new service or capacity increases are required.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        Is eTRU infrastructure worth the investment?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer" role="region">
+        <div class="faq-answer-inner">For many operations, the return comes from a combination of reduced fuel use, lower maintenance, longer equipment life, and more predictable energy costs. Facilities that plan infrastructure correctly tend to see faster and more reliable ROI.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="assets/logo.png" alt="SafeConnect Systems" />
+      <p>SafeConnect has spent decades helping refrigerated fleets transition to cleaner, more efficient electric standby technology — from site assessment through installation and beyond.</p>
+      <div class="footer-contact">
+        <a href="tel:+18447872332">(844) 787-2332</a>
+        <a href="mailto:info@safeconnectsystems.com">info@safeconnectsystems.com</a>
+        <a href="https://safeconnectsystems.com" target="_blank" rel="noopener">www.safeconnectsystems.com</a>
+      </div>
+      <div class="footer-socials">
+        <a class="social-icon" href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a class="social-icon" href="#" target="_blank" rel="noopener" aria-label="X/Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a class="social-icon" href="#" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+    </div>
+    <div></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 SafeConnect Systems. All rights reserved.</p>
+    <p>Certain SafeConnect products and methods are protected by one or more U.S. patents. Other patents pending.</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item.open').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      // Open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
+</body>
+</html>
