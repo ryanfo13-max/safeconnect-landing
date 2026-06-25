@@ -75,7 +75,7 @@
       display: flex;
       align-items: center;
     }
-    .logo-img { height: 72px; width: auto; }
+    .logo-img { height: 90px; width: auto; }
     .header-right { display: flex; align-items: center; gap: 4px; margin-left: auto; }
     nav { display: flex; align-items: center; gap: 4px; }
     nav a {
@@ -167,10 +167,12 @@
       align-items: center;
     }
     .book-img {
-      max-width: 320px;
+      max-width: 400px;
       width: 100%;
       height: auto;
     }
+    .btn-orange { background: var(--accent) !important; color: var(--navy-dark) !important; }
+    .btn-orange:hover { background: #e09212 !important; }
 
     /* ─── TRUST BAR ─── */
     .trust-bar {
@@ -749,7 +751,7 @@
       <p class="hero-desc">A practical guide to infrastructure planning, operational readiness, safety considerations, and ROI for refrigerated fleets evaluating electric standby.</p>
 
       <div class="hero-cta-wrap">
-        <a href="guide.html" class="btn btn-hero">
+        <a href="guide.html" class="btn btn-hero btn-orange">
           <i class="fa-solid fa-book-open"></i>
           View the Guide
         </a>
@@ -961,6 +963,12 @@
         <p>The most successful electrification projects begin with a <strong>clear understanding of facility requirements.</strong></p>
       </div>
     </div>
+    <div style="text-align:center;margin-top:36px;">
+      <a href="guide.html" class="btn btn-orange" style="padding:14px 36px;font-size:1rem;">
+        <i class="fa-solid fa-book-open"></i>
+        View the Guide
+      </a>
+    </div>
   </div>
 </section>
 
@@ -1020,7 +1028,7 @@
 <section class="form-section" id="form">
   <div class="form-inner">
     <div class="form-book-wrap">
-      <img src="assets/book-hero.png" alt="The Real Cost of Electrifying Yard Operations — SafeConnect White Paper" class="book-img" style="max-width:260px;" />
+      <img src="assets/book-hero.png" alt="The Real Cost of Electrifying Yard Operations — SafeConnect White Paper" class="book-img" style="max-width:325px;" />
     </div>
 
     <div class="form-right">
